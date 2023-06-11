@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY untitled-ontology-7 "http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#"
+     xml:base="http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:untitled-ontology-7="http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#maAdres -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-7;maAdres">
+        <rdfs:range rdf:resource="&untitled-ontology-7;Adres"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-7;Klient"/>
+                    <rdf:Description rdf:about="&untitled-ontology-7;Pracownik"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#maKlienta -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-7;maKlienta">
+        <rdfs:range rdf:resource="&untitled-ontology-7;Klient"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#maPalete -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-7;maPalete">
+        <rdfs:range rdf:resource="&untitled-ontology-7;Paleta"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#maPojazd -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-7;maPojazd">
+        <rdfs:range rdf:resource="&untitled-ontology-7;Pojazd"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-7;FirmaTransportowa"/>
+                    <rdf:Description rdf:about="&untitled-ontology-7;Przewoz"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#maPracownika -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-7;maPracownika">
+        <rdfs:range rdf:resource="&untitled-ontology-7;Pracownik"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-7;FirmaTransportowa"/>
+                    <rdf:Description rdf:about="&untitled-ontology-7;Przewoz"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#maPrzewoz -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-7;maPrzewoz">
+        <rdfs:range rdf:resource="&untitled-ontology-7;Przewoz"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#maZamowienie -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-7;maZamowienie">
+        <rdfs:domain rdf:resource="&untitled-ontology-7;FirmaTransportowa"/>
+        <rdfs:range rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#przewoziPalete -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-7;przewoziPalete">
+        <rdfs:range rdf:resource="&untitled-ontology-7;Paleta"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-7;SamochodCiezarowy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#Adres -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;Adres">
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;FirmaTransportowa"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Klient"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Paleta"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Pojazd"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Pracownik"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Przewoz"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#FirmaTransportowa -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;FirmaTransportowa">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;maPracownika"/>
+                <owl:onClass rdf:resource="&untitled-ontology-7;Pracownik"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;maPojazd"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Klient"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Paleta"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Pojazd"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Pracownik"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Przewoz"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#Klient -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;Klient">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;maAdres"/>
+                <owl:onClass rdf:resource="&untitled-ontology-7;Adres"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Paleta"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Pojazd"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Pracownik"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Przewoz"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#Paleta -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;Paleta">
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Pojazd"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Pracownik"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Przewoz"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#Pojazd -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;Pojazd">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-7;SamochodCiezarowy"/>
+                    <rdf:Description rdf:about="&untitled-ontology-7;SamochodOsobowy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Przewoz"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#Pracownik -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;Pracownik">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&untitled-ontology-7;maPracownika"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Przewoz"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#Przewoz -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;Przewoz">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;maPojazd"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;maPracownika"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;Zamowienie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#SamochodCiezarowy -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;SamochodCiezarowy">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;przewoziPalete"/>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-7;Pojazd"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-7;SamochodOsobowy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#SamochodOsobowy -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;SamochodOsobowy">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-7;Pojazd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#Zamowienie -->
+
+    <owl:Class rdf:about="&untitled-ontology-7;Zamowienie">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;maPalete"/>
+                <owl:onClass rdf:resource="&untitled-ontology-7;Paleta"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-7;maKlienta"/>
+                        <owl:onClass rdf:resource="&untitled-ontology-7;Klient"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-7;maKlienta"/>
+                        <owl:onClass rdf:resource="&untitled-ontology-7;Klient"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;maPrzewoz"/>
+                <owl:someValuesFrom rdf:resource="&untitled-ontology-7;Przewoz"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-7;maPalete"/>
+                <owl:onClass rdf:resource="&untitled-ontology-7;Paleta"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#adres1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;adres1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#adres2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;adres2"/>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#ciezarowka1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;ciezarowka1">
+        <przewoziPalete rdf:resource="&untitled-ontology-7;paleta1"/>
+        <przewoziPalete rdf:resource="&untitled-ontology-7;paleta2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#ciezarowka2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;ciezarowka2">
+        <przewoziPalete rdf:resource="&untitled-ontology-7;paleta3"/>
+        <przewoziPalete rdf:resource="&untitled-ontology-7;paleta4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#klient1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;klient1">
+        <maAdres rdf:resource="&untitled-ontology-7;adres1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#klient2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;klient2">
+        <maAdres rdf:resource="&untitled-ontology-7;adres1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#paleta1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;paleta1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#paleta2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;paleta2"/>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#paleta3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;paleta3"/>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#paleta4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;paleta4"/>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#pracownik1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;pracownik1">
+        <maAdres rdf:resource="&untitled-ontology-7;adres2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#pracownik2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;pracownik2">
+        <maAdres rdf:resource="&untitled-ontology-7;adres2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#przewoz1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;przewoz1">
+        <maPojazd rdf:resource="&untitled-ontology-7;ciezarowka1"/>
+        <maPracownika rdf:resource="&untitled-ontology-7;pracownik1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#przewoz2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;przewoz2">
+        <maPojazd rdf:resource="&untitled-ontology-7;ciezarowka2"/>
+        <maPracownika rdf:resource="&untitled-ontology-7;pracownik2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#samochod1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;samochod1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#transPol -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;transPol">
+        <maPojazd rdf:resource="&untitled-ontology-7;ciezarowka1"/>
+        <maPojazd rdf:resource="&untitled-ontology-7;ciezarowka2"/>
+        <maPracownika rdf:resource="&untitled-ontology-7;pracownik1"/>
+        <maPracownika rdf:resource="&untitled-ontology-7;pracownik2"/>
+        <maPojazd rdf:resource="&untitled-ontology-7;samochod1"/>
+        <maZamowienie rdf:resource="&untitled-ontology-7;zamowienie1"/>
+        <maZamowienie rdf:resource="&untitled-ontology-7;zamowienie2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#zamowienie1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;zamowienie1">
+        <maKlienta rdf:resource="&untitled-ontology-7;klient1"/>
+        <maPalete rdf:resource="&untitled-ontology-7;paleta1"/>
+        <maPalete rdf:resource="&untitled-ontology-7;paleta2"/>
+        <maPrzewoz rdf:resource="&untitled-ontology-7;przewoz1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/agnieszka/ontologies/2023/4/untitled-ontology-7#zamowienie2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-7;zamowienie2">
+        <maKlienta rdf:resource="&untitled-ontology-7;klient2"/>
+        <maPalete rdf:resource="&untitled-ontology-7;paleta3"/>
+        <maPalete rdf:resource="&untitled-ontology-7;paleta4"/>
+        <maPrzewoz rdf:resource="&untitled-ontology-7;przewoz2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;ciezarowka1"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;samochod1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta2"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta4"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;klient1"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;klient2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta1"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta1"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta4"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta1"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;adres1"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;adres2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta2"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;ciezarowka2"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;samochod1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;ciezarowka1"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;ciezarowka2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta3"/>
+            <rdf:Description rdf:about="&untitled-ontology-7;paleta4"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
