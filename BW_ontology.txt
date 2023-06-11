@@ -1,0 +1,53 @@
+- Koncepty (min 10):
+FirmaTransportowa
+Pracownik
+Pojazd
+Ciezarowka
+Samochod
+Zamowienie
+Paleta
+Przewoz
+Klient
+Adres
+
+- Role (min3):
+-- Wykorzystując koncept R some (R some C) możemy wywnioskować, że każde zamówienie musi mieć przynajmniej jeden przewóz. Możemy to zapisać następująco:
+Zamówienie subClassOf: maPrzewoz some Przewoz
+maPrzewoz: D: Zamowienie, R: Przewoz
+
+--Wykorzystując koncept R only C możemy wywnioskować, że każdy klient może mieć tylko jeden adres. Możemy to zapisać następująco:
+Klient subClassOf: maAdres only Adres
+maAdres: D: Klient or Pracownik, R: Adres
+
+--Wykorzystując koncept R min n C możemy wywnioskować, że każde zamówienie musi mieć co najmniej jedną paletę. Możemy to zapisać następująco:
+maPalete: D: Zamowienie, R: Paleta
+Zamowienie subClassOf: maPalete min 1 Paleta
+
+--Wykorzystując koncept R max n C możemy wywnioskować, że każdy przewóz może przewieźć co najwyżej jedną paletę. Możemy to zapisać następująco:
+przewoziPalete: D: Ciezarowka, R: Paleta
+Przewóz subClassOf: przewoziPaletę max 1 Paleta
+
+--Wykorzystując dziedziczenie wyczerpujące, możemy wywnioskować, że każdy pojazd jest albo samochodem, albo ciężarówką. Możemy to zapisać następująco:
+Pojazd subClassOf: Samochód or Ciężarówka
+
+-- Każda firma ma zamówienia: maZamówienie: D: FirmaTransportowa, R: Zamowienie
+-- Każda firma ma pojazd: maPojazd: D: FirmaTransportowa, R: Pojazd
+
+-- Każda firma transportowa ma co najmniej jednego pracownika:
+maPracownika: D: FirmaTransportowa, R: Pracownik,
+FirmaTransportowa Equivalent To: maPracownika min 2 Pracownik
+
+
+wnioskowanie:
+
+Mamy firmę transportową trans Pol.
+Każda firma ma min 2 pojazdy i min 2 pracowników.
+
+Mamy też zamówienia.
+Każde zamówienie ma tylko jednego Klienta (który posiada swój adres).
+Zamówienie ma od 1 do 2 palet.
+
+Każdy przewóz jest przypisany do danego zamówienia, ma min 1 pojazd i min 1 pracownika.
+
+W posiadane przez firmę pojazdy wchodzą samochody ciężarowe i samochody osobowe.
+Przewozić palety mogą tylko samochody ciężarowe (osobowe nie mogą).
