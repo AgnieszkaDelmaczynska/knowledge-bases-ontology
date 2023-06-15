@@ -98,3 +98,8 @@ Based on the provided information, we can make the following inferences:
 6. Only trucks are capable of transporting pallets; cars are not suitable for this purpose.
 
 These inferences are derived from the given statements and reflect the logical relationships between the entities and their properties in the transportation domain.
+
+![obraz](https://github.com/AgnieszkaDelmaczynska/knowledge-bases-ontology/assets/105732925/41ed640a-989f-4cc6-af2e-6a24d1fa4dd0)
+
+![obraz](https://github.com/AgnieszkaDelmaczynska/knowledge-bases-ontology/assets/105732925/2dfe13cc-1ba1-4d94-8224-bd7dcd3ebaca)
+
